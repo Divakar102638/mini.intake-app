@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Buyer Lead App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>MINI BUYER LEAD INTAKE</h1>
+
+  <!-- Lead Form -->
+  <form id="buyerForm">
+    <label>Full Name
+      <input type="text" name="fullName" required minlength="2" maxlength="80">
+    </label>
+    <label>Email
+      <input type="email" name="email">
+    </label>
+    <label>Phone
+      <input type="tel" name="phone" required pattern="\d{10,15}">
+    </label>
+    <label>City
+      <select name="city" required>
+        <option></option>
+        <option>VIJAYAWADA</option>
+        <option>CHENNAI</option>
+        <option>HYDERABAD</option>
+        <option>BANGALORE</option>
+      </select>
+    </label>
+    <label>Property Type
+      <select id="propertyType" name="propertyType" required>
+        <option></option>
+        <option>Apartment</option>
+        <option>Villa</option>
+        <option>Plot</option>
+        <option>Office</option>
+        <option>Retail</option>
+      </select>
+    </label>
+    <label id="bhkLabel" style="display:none;">BHK
+      <select name="bhk">
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>Studio</option>
+      </select>
+    </label>
+    <label>Purpose
+      <select name="purpose" required>
+        <option>Buy</option><option>Rent</option>
+      </select>
+    </label>
+    <label>Budget Min
+      <input type="number" name="budgetMin" min="0">
+    </label>
+    <label>Budget Max
+      <input type="number" name="budgetMax" min="0">
+    </label>
+    <label>Timeline
+      <select name="timeline">
+        <option> </option>
+        <option>0-3m</option>
+        <option>3-6m</option>
+        <option>&gt;6m</option><option>Exploring</option>
+      </select>
+    </label>
+    <label>Source
+      <select name="source">
+        <option> </option>
+        <option>Website</option><option>Referral</option>
+        <option>Walk-in</option><option>Call</option><option>Other</option>
+      </select>
+    </label>
+    <label>Notes
+      <textarea name="notes" maxlength="1000"></textarea>
+    </label>
+    <label>Tags (comma separated)
+      <input type="text" name="tags">
+    </label>
+    <button type="submit">Add Buyer</button>
+  </form>
+
+  <h2>Buyers List</h2>
+  <table id="buyersTable">
+    <thead>
+      <tr>
+        <th>Name</th><th>Phone</th><th>City</th><th>Type</th><th>Budget</th><th>Timeline</th><th>Status</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
